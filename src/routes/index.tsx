@@ -79,7 +79,7 @@ function Index() {
           <div className="celestial-ring absolute size-[min(74vw,38rem)] rounded-full border border-foreground/15" />
           <div className="relative z-10">
             <p className="mb-6 text-xs uppercase tracking-[0.38em] text-muted-foreground">「 半 星 洲 」</p>
-            <h1 className="font-serif text-6xl uppercase sm:text-8xl">Bán Tinh Châu</h1>
+            <h1 className="font-brand text-6xl uppercase sm:text-8xl">Bán Tinh Châu</h1>
             <p className="mx-auto mt-7 max-w-xl font-serif text-xl italic text-muted-foreground sm:text-2xl">“Tinh môn đã mở, thiên hạ không còn người đứng ngoài cuộc.”</p>
             <button className="mt-10 border border-foreground/35 px-7 py-3 text-xs uppercase tracking-[0.25em] transition-colors hover:bg-foreground hover:text-background" onClick={() => setEntered(true)}>Nhập châu</button>
           </div>
@@ -90,7 +90,7 @@ function Index() {
         <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 lg:px-10">
           <button onClick={() => go("top")} className="flex min-w-0 items-center gap-3 text-left">
             <span className="grid size-8 shrink-0 place-items-center border border-foreground/30 font-serif text-lg">半</span>
-            <span className="truncate font-serif text-xl">Bán Tinh Châu</span>
+            <span className="truncate font-brand text-xl">Bán Tinh Châu</span>
           </button>
           <nav className="hidden items-center gap-6 lg:flex">
             {["thiên-hạ", "thế-lực", "nhân-vật", "địa-đồ", "đại-sự-kiện"].map((id) => <button key={id} onClick={() => go(id)} className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">{id.replaceAll("-", " ")}</button>)}
@@ -107,7 +107,7 @@ function Index() {
         <div className="relative z-10 lg:col-span-7 lg:pb-10">
           <p className="animate-rise mb-6 text-xs uppercase tracking-[0.35em] text-muted-foreground">Biên niên thiên văn · Tập I</p>
           <p className="mb-4 font-serif text-xl text-muted-foreground">「 半 星 洲 」</p>
-          <h1 className="animate-rise font-serif text-6xl uppercase leading-[0.92] sm:text-8xl lg:text-9xl">Bán Tinh<br />Châu</h1>
+          <h1 className="animate-rise font-brand text-6xl uppercase leading-[0.92] sm:text-8xl lg:text-9xl">Bán Tinh<br />Châu</h1>
           <p className="animate-rise mt-8 max-w-xl font-serif text-xl italic leading-relaxed text-muted-foreground sm:text-2xl">“Nơi một bước có thể thành tiên, một bước cũng có thể vạn kiếp bất phục.”</p>
           <div className="mt-10 flex flex-wrap items-center gap-5"><button onClick={() => go("thiên-hạ")} className="bg-foreground px-7 py-3 text-xs uppercase tracking-[0.18em] text-background">Khám phá thiên hạ</button><button onClick={() => go("nhân-vật")} className="border-b border-foreground/30 py-2 text-xs uppercase tracking-[0.18em]">Xem nhân vật</button></div>
         </div>
