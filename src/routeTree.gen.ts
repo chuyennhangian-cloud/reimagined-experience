@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BienNienRouteImport } from './routes/bien-nien'
+import { Route as DiaDoRouteImport } from './routes/dia-do'
+import { Route as NhanVatRouteImport } from './routes/nhan-vat'
+import { Route as TheLucRouteImport } from './routes/the-luc'
+import { Route as ThienHaRouteImport } from './routes/thien-ha'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BienNienRoute = BienNienRouteImport.update({
+  id: '/bien-nien',
+  path: '/bien-nien',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiaDoRoute = DiaDoRouteImport.update({
+  id: '/dia-do',
+  path: '/dia-do',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NhanVatRoute = NhanVatRouteImport.update({
+  id: '/nhan-vat',
+  path: '/nhan-vat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheLucRoute = TheLucRouteImport.update({
+  id: '/the-luc',
+  path: '/the-luc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThienHaRoute = ThienHaRouteImport.update({
+  id: '/thien-ha',
+  path: '/thien-ha',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bien-nien': typeof BienNienRoute
+  '/dia-do': typeof DiaDoRoute
+  '/nhan-vat': typeof NhanVatRoute
+  '/the-luc': typeof TheLucRoute
+  '/thien-ha': typeof ThienHaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bien-nien': typeof BienNienRoute
+  '/dia-do': typeof DiaDoRoute
+  '/nhan-vat': typeof NhanVatRoute
+  '/the-luc': typeof TheLucRoute
+  '/thien-ha': typeof ThienHaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bien-nien': typeof BienNienRoute
+  '/dia-do': typeof DiaDoRoute
+  '/nhan-vat': typeof NhanVatRoute
+  '/the-luc': typeof TheLucRoute
+  '/thien-ha': typeof ThienHaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/bien-nien' | '/dia-do' | '/nhan-vat' | '/the-luc' | '/thien-ha'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/bien-nien' | '/dia-do' | '/nhan-vat' | '/the-luc' | '/thien-ha'
+  id:
+    | '__root__'
+    | '/'
+    | '/bien-nien'
+    | '/dia-do'
+    | '/nhan-vat'
+    | '/the-luc'
+    | '/thien-ha'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BienNienRoute: typeof BienNienRoute
+  DiaDoRoute: typeof DiaDoRoute
+  NhanVatRoute: typeof NhanVatRoute
+  TheLucRoute: typeof TheLucRoute
+  ThienHaRoute: typeof ThienHaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bien-nien': {
+      id: '/bien-nien'
+      path: '/bien-nien'
+      fullPath: '/bien-nien'
+      preLoaderRoute: typeof BienNienRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dia-do': {
+      id: '/dia-do'
+      path: '/dia-do'
+      fullPath: '/dia-do'
+      preLoaderRoute: typeof DiaDoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nhan-vat': {
+      id: '/nhan-vat'
+      path: '/nhan-vat'
+      fullPath: '/nhan-vat'
+      preLoaderRoute: typeof NhanVatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-luc': {
+      id: '/the-luc'
+      path: '/the-luc'
+      fullPath: '/the-luc'
+      preLoaderRoute: typeof TheLucRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thien-ha': {
+      id: '/thien-ha'
+      path: '/thien-ha'
+      fullPath: '/thien-ha'
+      preLoaderRoute: typeof ThienHaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BienNienRoute: BienNienRoute,
+  DiaDoRoute: DiaDoRoute,
+  NhanVatRoute: NhanVatRoute,
+  TheLucRoute: TheLucRoute,
+  ThienHaRoute: ThienHaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
