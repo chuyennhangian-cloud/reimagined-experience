@@ -99,7 +99,7 @@ body::after {
 .corner-nw { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
 .corner-se { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
 .codex-nav { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; padding: 2rem 1.75rem; background: var(--background); transform: translateX(-100%); transition: transform .4s cubic-bezier(.32,.72,0,1); }
-.codex-nav.is-open { transform: none; }
+.codex-nav.is-open { transform: none; box-shadow: 1rem 0 3rem color-mix(in oklab, var(--background) 70%, transparent); }
 .codex-nav > div > a, .mobile-bar > a { font-family: "Instrument Serif", "Lora", serif; letter-spacing: 0; }
 .chapter-link { display: flex; align-items: center; gap: .9rem; min-height: 2rem; font-family: "Lora", serif; font-size: 1.05rem; color: var(--muted-foreground); transition: color .3s; }
 .chapter-link span { font-family: "Nunito Sans", sans-serif; font-size: .65rem; letter-spacing: .2em; }
@@ -185,9 +185,9 @@ body::after {
 .portrait-ledger strong { display: block; margin-top: .25rem; font-family: "Lora", serif; font-weight: 400; font-size: 1.3rem; }
 .portrait-ledger small { color: var(--muted-foreground); font-size: .85rem; }
 @media (min-width: 1024px) { .portrait-ledger { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
-.dossier { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 4rem 1rem 1rem; background: color-mix(in oklab, var(--background) 92%, transparent); backdrop-filter: blur(6px); animation: opening-in .4s ease both; overflow-y: auto; }
+.dossier { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 4rem 1rem 1rem; background: color-mix(in oklab, var(--background) 97%, transparent); backdrop-filter: blur(12px); animation: opening-in .4s ease both; overflow-y: auto; }
 .dossier-close { position: fixed; top: 1rem; right: 1rem; border-radius: 0; }
-.dossier-sheet { position: relative; display: grid; gap: 2rem; max-width: 60rem; width: 100%; border: 1px solid var(--line-strong); background: var(--surface-deep); padding: 1.25rem; }
+.dossier-sheet { position: relative; display: grid; gap: 2rem; max-width: 60rem; width: 100%; border: 1px solid var(--line-strong); background: var(--background); padding: 1.25rem; box-shadow: 0 2rem 6rem color-mix(in oklab, var(--background) 75%, transparent); }
 .dossier-sheet::after { content: ""; position: absolute; inset: .45rem; border: 1px solid var(--border); pointer-events: none; }
 .dossier-sheet > * { position: relative; z-index: 1; }
 .dossier-sheet img { width: 100%; max-height: 60vh; object-fit: cover; }
